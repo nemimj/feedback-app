@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header.jsx";
-import FeedbackItem from "./components/FeedbackItem.jsx";
+import FeedbackList from "./components/FeedbackList.jsx";
 import FeedbackData from "./data/feedbackData.jsx";
 function App() {
   // empty tag is called fragment tag
@@ -10,7 +10,7 @@ function App() {
       <Header></Header>
       <div className="container">
         <h1>My App</h1>
-        <FeedbackItem></FeedbackItem>
+        <FeedbackList feedback={feedback}></FeedbackList>
       </div>
     </>
   );
