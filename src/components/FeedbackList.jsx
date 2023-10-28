@@ -1,6 +1,6 @@
 import React from "react";
 import FeedbackItem from "./FeedbackItem";
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, handleDelete }) {
   // feedback = feedback.filter((item)=>item.id !== state)
 
   if (!feedback || feedback.lenght === 0) {
@@ -12,7 +12,7 @@ function FeedbackList({ feedback }) {
         <FeedbackItem
           key={item.id}
           item={item}
-          handleDelete={(id) => console.log(id)}
+          handleDelete={handleDelete}
         ></FeedbackItem>
       ))}
     </div>
