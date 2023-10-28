@@ -1,7 +1,16 @@
 import React from "react";
-
-function Card({ children }) {
-  return <div className="card">{children}</div>;
+import PropTypes from "prop-types";
+function Card({ children, reverse }) {
+  return <div className={`card ${reverse && "reverse"}`}>{children}</div>;
 }
+
+Card.defaultProps = {
+  reverse: false,
+};
+
+Card.prototype = {
+  children: PropTypes.node,
+  reverse: PropTypes.bool,
+};
 
 export default Card;
