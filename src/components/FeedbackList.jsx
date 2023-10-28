@@ -3,7 +3,7 @@ import FeedbackItem from "./FeedbackItem";
 function FeedbackList({ feedback, handleDelete }) {
   // feedback = feedback.filter((item)=>item.id !== state)
 
-  if (!feedback || feedback.lenght === 0) {
+  if (!feedback || feedback.length === 0) {
     return <p>No Feedback Yet</p>;
   }
   return (
