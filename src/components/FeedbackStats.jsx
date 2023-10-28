@@ -5,10 +5,13 @@ function FeedbackStats({ feedback }) {
     feedback.reduce((sum, current) => {
       return sum + current.rating;
     }, 0) / feedback.length;
+
+  average = average.toFixed(1).replace(/[.,]0$/, "");
+
   return (
     <div className="feedback-stats">
       <h4>Reviews : {feedback.length}</h4>
-      <h4>Average : {average}</h4>
+      <h4>Average Rating: {isNaN(average) ? 0 : average}</h4>
     </div>
   );
 }
