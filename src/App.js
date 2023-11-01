@@ -3,6 +3,7 @@ import Header from "./components/Header.jsx";
 import FeedbackList from "./components/FeedbackList.jsx";
 import FeedbackData from "./data/feedbackData.jsx";
 import FeedbackStats from "./components/FeedbackStats.jsx";
+import FeedbackForm from "./components/FeedbackForm.jsx";
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
@@ -16,6 +17,7 @@ function App() {
       <Header></Header>
       <div className="container">
         <h1>My App</h1>
+        <FeedbackForm></FeedbackForm>
         <FeedbackStats feedback={feedback}></FeedbackStats>
         <FeedbackList
           feedback={feedback}
