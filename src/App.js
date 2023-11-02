@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import {BrowserRouter as Router , Route} from 'react-router-dom'
+import {BrowserRouter as Router , Route,Routes} from 'react-router-dom'
 import Header from "./components/Header.jsx";
 import FeedbackList from "./components/FeedbackList.jsx";
 import FeedbackData from "./data/feedbackData.jsx";
@@ -21,19 +21,24 @@ function App() {
     setFeedback([newFeedback, ...feedback]);
   };
   return (
-    <>
+    <Router>
       <Header></Header>
       <div className="container">
-        <h1>My App</h1>
+      <Routes>
+      <Route exact path="/" element={<>
+
         <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
         <FeedbackStats feedback={feedback}></FeedbackStats>
         <FeedbackList
           feedback={feedback}
           handleDelete={deleteFeedback}
         ></FeedbackList>
+      </>}>
+        </Route>
+        <Route path="/about" element={<AboutPage />}></Route>
+        </Routes>
       </div>
-      <AboutPage></AboutPage>
-    </>
+    </Router>
   );
 }
 
