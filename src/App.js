@@ -7,6 +7,11 @@ import FeedbackData from "./data/feedbackData.jsx";
 import FeedbackStats from "./components/FeedbackStats.jsx";
 import FeedbackForm from "./components/FeedbackForm.jsx";
 import AboutPage from "./components/pages/AboutPage.jsx"
+import AboutIconLink from "./components/AboutIconLink.jsx";
+
+// *Use <a> tags for external links
+
+
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
@@ -33,10 +38,13 @@ function App() {
           feedback={feedback}
           handleDelete={deleteFeedback}
         ></FeedbackList>
+        <AboutIconLink></AboutIconLink>
+
       </>}>
         </Route>
         <Route path="/about" element={<AboutPage />}></Route>
         </Routes>
+        
       </div>
     </Router>
   );
