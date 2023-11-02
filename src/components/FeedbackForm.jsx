@@ -35,7 +35,7 @@ function FeedbackForm({ handleAdd }) {
         rating,
       };
       handleAdd(newFeedback);
-      setText(); // make the text state empty
+      setText(""); // make the text state empty
     }
   };
 
