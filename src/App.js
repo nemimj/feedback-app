@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import {BrowserRouter as Router , Route} from 'react-router-dom'
 import Header from "./components/Header.jsx";
 import FeedbackList from "./components/FeedbackList.jsx";
 import FeedbackData from "./data/feedbackData.jsx";
 import FeedbackStats from "./components/FeedbackStats.jsx";
 import FeedbackForm from "./components/FeedbackForm.jsx";
+import AboutPage from "./components/pages/AboutPage.jsx"
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
@@ -30,6 +32,7 @@ function App() {
           handleDelete={deleteFeedback}
         ></FeedbackList>
       </div>
+      <AboutPage></AboutPage>
     </>
   );
 }
