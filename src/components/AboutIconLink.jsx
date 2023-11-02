@@ -7,7 +7,11 @@ import { FaQuestion } from 'react-icons/fa'
 function AboutIconLink() {
   return (
     <div className='about-link'>
-    <Link to='/about'>
+    <Link to={{
+        pathname:'/about',
+        search:'?sort=name',
+        hash:'#hello'
+    }}>
     <FaQuestion></FaQuestion>
     </Link>
     </div>
