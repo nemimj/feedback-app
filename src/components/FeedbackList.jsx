@@ -1,8 +1,13 @@
 import {motion,AnimatePresence} from 'framer-motion'
 import React from "react";
 import FeedbackItem from "./FeedbackItem";
+import FeedbackContext from '../context/FeedbackContext';
+import { useContext } from 'react';
 
-function FeedbackList({ feedback, handleDelete }) {
+function FeedbackList({handleDelete }) {
+  // we can use only the value which we are passed in the feedbackcontext.provider
+  const {feedback} = useContext(FeedbackContext)
+
   // feedback = feedback.filter((item)=>item.id !== state)
 
   if (!feedback || feedback.length === 0) {
