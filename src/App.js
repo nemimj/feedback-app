@@ -8,6 +8,7 @@ import FeedbackStats from "./components/FeedbackStats.jsx";
 import FeedbackForm from "./components/FeedbackForm.jsx";
 import AboutPage from "./components/pages/AboutPage.jsx"
 import AboutIconLink from "./components/AboutIconLink.jsx";
+import { FeedbackProvider } from "./context/FeedbackContext.js";
 
 // *Use <a> tags for external links
 
@@ -26,6 +27,7 @@ function App() {
     setFeedback([newFeedback, ...feedback]);
   };
   return (
+    <FeedbackProvider>
     <Router>
       <Header></Header>
       <div className="container">
@@ -47,6 +49,7 @@ function App() {
         
       </div>
     </Router>
+    </FeedbackProvider>
   );
 }
 
