@@ -4,7 +4,7 @@ import FeedbackItem from "./FeedbackItem";
 import FeedbackContext from '../context/FeedbackContext';
 import { useContext } from 'react';
 
-function FeedbackList({handleDelete }) {
+function FeedbackList() {
   // we can use only the value which we are passed in the feedbackcontext.provider
   const {feedback} = useContext(FeedbackContext)
 
@@ -21,7 +21,6 @@ function FeedbackList({handleDelete }) {
         <FeedbackItem
           key={item.id}
           item={item}
-          handleDelete={handleDelete}
         ></FeedbackItem>
         </motion.div>
       ))}

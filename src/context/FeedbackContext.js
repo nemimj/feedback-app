@@ -11,11 +11,18 @@ export const FeedbackProvider = ({children})=>{
         }
     ])
 
+    
+  const deleteFeedback = (id) => {
+    if (window.confirm("Are you sure you wanna delete this post !")) {
+      setFeedback(feedback.filter((item) => item.id !== id));
+    }
+  };
 
 
     // we can use only one feedback when we have 2 of same names but for the seeking part i used both 
     return <FeedbackContext.Provider value={
-        {feedback:feedback}
+        {feedback:feedback,
+        deleteFeedback}
         }>
         {children}
     </FeedbackContext.Provider>
