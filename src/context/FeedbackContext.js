@@ -12,6 +12,10 @@ export const FeedbackProvider = ({children})=>{
         }
     ])
 
+    const [feedbackEdit,setFeedbackEdit] = useState({
+      item:{},
+      edit:false
+    })
     
   const deleteFeedback = (id) => {
     if (window.confirm("Are you sure you wanna delete this post !")) {
@@ -25,12 +29,21 @@ export const FeedbackProvider = ({children})=>{
     setFeedback([newFeedback, ...feedback]);
   };
 
+  const editFeedback = (item) =>{
+    setFeedbackEdit({
+      item,
+      edit:true
+    })
+  }
 
     // we can use only one feedback when we have 2 of same names but for the seeking part i used both 
     return <FeedbackContext.Provider value={
         {feedback:feedback,
         deleteFeedback,
-        addFeedback}
+        addFeedback,
+        editFeedback, // this is function
+        feedbackEdit // this is params
+        }
         }>
         {children}
     </FeedbackContext.Provider>

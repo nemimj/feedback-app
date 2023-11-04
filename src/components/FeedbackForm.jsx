@@ -1,16 +1,34 @@
 import React from "react";
 import Card from "./shared/Card";
-import { useState,useContext } from "react";
+import { useState,useContext ,useEffect} from "react";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 import FeedbackContext from "../context/FeedbackContext";
-function FeedbackForm({ handleAdd }) {
+function FeedbackForm() {
   const [text, setText] = useState("");
   const [btnDisable, setBtnDisable] = useState(true);
   const [message, setMessage] = useState("");
   const [rating, setRating] = useState(10);
 
-  const {addFeedback} = useContext(FeedbackContext);
+
+
+
+  const {addFeedback,feedbackEdit} = useContext(FeedbackContext);
+
+
+
+// UseEffect functions runs when the component is changed by  [if no component is added in the array ] default it will runs 1 time 
+// ex : useEffect(()=>{},[feedbackEdit])
+
+
+useEffect(()=>{
+  if(feedbackEdit.edit === true){
+    setBtnDisable(false);
+    setText(feedbackEdit.item.text);
+    setRating(feedbackEdit.item.rating);
+  }
+})
+
 
 
   const handleTextChange = (e) => {
